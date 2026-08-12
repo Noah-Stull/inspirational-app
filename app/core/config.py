@@ -1,0 +1,63 @@
+"""App-wide constants and content."""
+
+APP_NAME = "Inspirational App"
+WINDOW_SIZE = (960, 640)
+
+# --- Graph rendering -------------------------------------------------------
+
+CANVAS_BG = "#0f1115"
+EDGE_COLOR = "#4a5468"
+NODE_BORDER = "#0f1115"
+NODE_RADIUS = 22
+LABEL_COLOR = "#d8dee9"
+LAYOUT_SCALE = 560  # pixels the unit-square layout is stretched across
+
+GROUP_COLORS = {
+    "core": "#f0b429",
+    "service": "#2f6df6",
+    "store": "#26a17b",
+    "client": "#b45cf0",
+}
+DEFAULT_NODE_COLOR = "#6b7684"
+
+# --- Theme -----------------------------------------------------------------
+
+STYLESHEET = """
+QMainWindow, QWidget#Root {
+    background-color: #14161a;
+}
+QLabel#Title {
+    color: #f2f4f8;
+    font-size: 18px;
+    font-weight: 600;
+}
+QLabel#Subtitle {
+    color: #8b93a1;
+    font-size: 13px;
+}
+QPushButton {
+    background-color: #2f6df6;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 13px;
+}
+QPushButton:hover {
+    background-color: #4880f8;
+}
+QPushButton:pressed {
+    background-color: #2559cc;
+}
+QPushButton#Secondary {
+    background-color: #262b33;
+    color: #d8dee9;
+}
+QPushButton#Secondary:hover {
+    background-color: #323945;
+}
+QGraphicsView {
+    border: 1px solid #262b33;
+    border-radius: 8px;
+}
+"""
