@@ -57,7 +57,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(root)
         self.reload_graph()
 
-    # --- actions -----------------------------------------------------------
+    # --- actions ------------------------------------------
 
     def reload_graph(self) -> None:
         """Fetch the graph from the data layer and draw it."""
@@ -69,11 +69,14 @@ class MainWindow(QMainWindow):
         """Recompute node positions with a different random arrangement."""
         self.view.set_graph(self.graph, spring_layout(self.graph, seed=None))
 
-    # --- helpers -----------------------------------------------------------
+    # --- helpers ---------------------------------------
 
     def _update_subtitle(self) -> None:
+        edges = self.graph.valid_edges()
+        hyper = sum(1 for e in edges if e.arity > 2)
         self.subtitle.setText(
             f"{len(self.graph.vertices)} vertices · "
-            f"{len(self.graph.valid_edges())} edges · "
-            "drag nodes, scroll to zoom, drag canvas to pan"
+            f"{len(edges)} edge-nodes ({hyper} with 3+ members) · "
+            f"{len(self.graph.incidences())} incidences · "
+            "circles are vertices, squares are edges"
         )

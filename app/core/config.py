@@ -10,7 +10,13 @@ EDGE_COLOR = "#4a5468"
 NODE_BORDER = "#0f1115"
 NODE_RADIUS = 22
 LABEL_COLOR = "#d8dee9"
-LAYOUT_SCALE = 560  # pixels the unit-square layout is stretched across
+LAYOUT_SCALE = 620  # pixels the unit-square layout is stretched across
+
+# Edge-nodes: edges promoted to nodes, drawn as squares to distinguish them
+# from vertices at a glance.
+EDGE_NODE_SIZE = 20
+EDGE_NODE_COLOR = "#8b93a1"
+EDGE_NODE_LABEL_COLOR = "#8b93a1"
 
 GROUP_COLORS = {
     "core": "#f0b429",
