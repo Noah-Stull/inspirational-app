@@ -1,6 +1,6 @@
 # inspirational-app
 
-A small PyQt6 desktop app that displays a random inspirational quote.
+A small PyQt6 desktop app that displays a hyper-graph.
 
 ## Setup
 
@@ -20,7 +20,7 @@ python main.py
 
 ```
 main.py                  entry point
-app/core/config.py       constants, quotes, stylesheet
+app/core/config.py       constants, stylesheet
 app/ui/main_window.py    MainWindow
-assets/                  icons, images
+assets/                  icons, images - future use
 ```
