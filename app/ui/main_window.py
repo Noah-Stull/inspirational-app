@@ -25,6 +25,7 @@ class MainWindow(QMainWindow):
         self.setStyleSheet(STYLESHEET)
 
         self.graph: Graph = Graph()
+        self.source: str = ""
 
         root = QWidget(objectName="Root")
         layout = QVBoxLayout(root)
@@ -61,7 +62,7 @@ class MainWindow(QMainWindow):
 
     def reload_graph(self) -> None:
         """Fetch the graph from the data layer and draw it."""
-        self.graph = fetch_graph()
+        self.graph, self.source = fetch_graph()
         self.view.set_graph(self.graph)
         self._update_subtitle()
 
@@ -75,8 +76,8 @@ class MainWindow(QMainWindow):
         edges = self.graph.valid_edges()
         hyper = sum(1 for e in edges if e.arity > 2)
         self.subtitle.setText(
+            f"source: {self.source}  ·  "
             f"{len(self.graph.vertices)} vertices · "
             f"{len(edges)} edge-nodes ({hyper} with 3+ members) · "
-            f"{len(self.graph.incidences())} incidences · "
-            "circles are vertices, squares are edges"
+            f"{len(self.graph.incidences())} incidences"
         )

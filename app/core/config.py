@@ -10,7 +10,8 @@ EDGE_COLOR = "#4a5468"
 NODE_BORDER = "#0f1115"
 NODE_RADIUS = 22
 LABEL_COLOR = "#d8dee9"
-LAYOUT_SCALE = 620  # pixels the unit-square layout is stretched across
+LAYOUT_SCALE = 620    # minimum pixels the unit-square layout is stretched across
+LAYOUT_SPACING = 225  # per-node breathing room: scale grows with sqrt(node count)
 
 # Edge-nodes: edges promoted to nodes, drawn as squares to distinguish them
 # from vertices at a glance.
@@ -19,10 +20,11 @@ EDGE_NODE_COLOR = "#8b93a1"
 EDGE_NODE_LABEL_COLOR = "#8b93a1"
 
 GROUP_COLORS = {
-    "core": "#f0b429",
-    "service": "#2f6df6",
-    "store": "#26a17b",
-    "client": "#b45cf0",
+    "europe": "#2f6df6",
+    "africa": "#f0b429",
+    "asia": "#26a17b",
+    "americas": "#b45cf0",
+    "oceania": "#d85a30",
 }
 DEFAULT_NODE_COLOR = "#6b7684"
 

@@ -1,0 +1,305 @@
+{
+  "graph_id": "world-cities",
+  "vertices": [
+    {
+      "id": "london",
+      "label": "London",
+      "group": "europe"
+    },
+    {
+      "id": "paris",
+      "label": "Paris",
+      "group": "europe"
+    },
+    {
+      "id": "berlin",
+      "label": "Berlin",
+      "group": "europe"
+    },
+    {
+      "id": "madrid",
+      "label": "Madrid",
+      "group": "europe"
+    },
+    {
+      "id": "rome",
+      "label": "Rome",
+      "group": "europe"
+    },
+    {
+      "id": "amsterdam",
+      "label": "Amsterdam",
+      "group": "europe"
+    },
+    {
+      "id": "cairo",
+      "label": "Cairo",
+      "group": "africa"
+    },
+    {
+      "id": "lagos",
+      "label": "Lagos",
+      "group": "africa"
+    },
+    {
+      "id": "nairobi",
+      "label": "Nairobi",
+      "group": "africa"
+    },
+    {
+      "id": "tokyo",
+      "label": "Tokyo",
+      "group": "asia"
+    },
+    {
+      "id": "seoul",
+      "label": "Seoul",
+      "group": "asia"
+    },
+    {
+      "id": "shanghai",
+      "label": "Shanghai",
+      "group": "asia"
+    },
+    {
+      "id": "mumbai",
+      "label": "Mumbai",
+      "group": "asia"
+    },
+    {
+      "id": "singapore",
+      "label": "Singapore",
+      "group": "asia"
+    },
+    {
+      "id": "bangkok",
+      "label": "Bangkok",
+      "group": "asia"
+    },
+    {
+      "id": "dubai",
+      "label": "Dubai",
+      "group": "asia"
+    },
+    {
+      "id": "jakarta",
+      "label": "Jakarta",
+      "group": "asia"
+    },
+    {
+      "id": "manila",
+      "label": "Manila",
+      "group": "asia"
+    },
+    {
+      "id": "new-york",
+      "label": "New York",
+      "group": "americas"
+    },
+    {
+      "id": "toronto",
+      "label": "Toronto",
+      "group": "americas"
+    },
+    {
+      "id": "chicago",
+      "label": "Chicago",
+      "group": "americas"
+    },
+    {
+      "id": "mexico-city",
+      "label": "Mexico City",
+      "group": "americas"
+    },
+    {
+      "id": "sao-paulo",
+      "label": "São Paulo",
+      "group": "americas"
+    },
+    {
+      "id": "lima",
+      "label": "Lima",
+      "group": "americas"
+    },
+    {
+      "id": "sydney",
+      "label": "Sydney",
+      "group": "oceania"
+    },
+    {
+      "id": "melbourne",
+      "label": "Melbourne",
+      "group": "oceania"
+    },
+    {
+      "id": "auckland",
+      "label": "Auckland",
+      "group": "oceania"
+    },
+    {
+      "id": "brisbane",
+      "label": "Brisbane",
+      "group": "oceania"
+    },
+    {
+      "id": "perth",
+      "label": "Perth",
+      "group": "oceania"
+    },
+    {
+      "id": "wellington",
+      "label": "Wellington",
+      "group": "oceania"
+    },
+    {
+      "id": "adelaide",
+      "label": "Adelaide",
+      "group": "oceania"
+    }
+  ],
+  "edges": [
+    {
+      "id": "r-north-atlantic",
+      "label": "North Atlantic",
+      "weight": 1.0,
+      "members": [
+        "cairo",
+        "london",
+        "madrid",
+        "paris"
+      ]
+    },
+    {
+      "id": "r-mediterranean",
+      "label": "Mediterranean",
+      "weight": 1.0,
+      "members": [
+        "cairo",
+        "london",
+        "new-york",
+        "tokyo"
+      ]
+    },
+    {
+      "id": "r-rhine",
+      "label": "Rhine corridor",
+      "weight": 1.0,
+      "members": [
+        "berlin",
+        "brisbane",
+        "new-york",
+        "toronto"
+      ]
+    },
+    {
+      "id": "r-tasman",
+      "label": "Tasman crossing",
+      "weight": 1.0,
+      "members": [
+        "auckland",
+        "madrid",
+        "melbourne",
+        "sydney"
+      ]
+    },
+    {
+      "id": "r-southern-ocean",
+      "label": "Southern Ocean",
+      "weight": 0.5,
+      "members": [
+        "adelaide",
+        "madrid",
+        "perth",
+        "rome",
+        "wellington"
+      ]
+    },
+    {
+      "id": "r-sahel",
+      "label": "Sahel route",
+      "weight": 1.0,
+      "members": [
+        "chicago",
+        "lagos",
+        "seoul",
+        "toronto"
+      ]
+    },
+    {
+      "id": "r-nile",
+      "label": "Nile route",
+      "weight": 1.0,
+      "members": [
+        "chicago",
+        "lagos",
+        "shanghai",
+        "toronto"
+      ]
+    },
+    {
+      "id": "r-indian-ocean",
+      "label": "Indian Ocean",
+      "weight": 1.0,
+      "members": [
+        "lagos",
+        "mumbai",
+        "toronto"
+      ]
+    },
+    {
+      "id": "r-monsoon",
+      "label": "Monsoon route",
+      "weight": 1.0,
+      "members": [
+        "lagos",
+        "lima",
+        "singapore",
+        "toronto"
+      ]
+    },
+    {
+      "id": "r-silk-road",
+      "label": "Silk Road",
+      "weight": 1.0,
+      "members": [
+        "bangkok",
+        "chicago",
+        "lagos",
+        "lima",
+        "sao-paulo"
+      ]
+    },
+    {
+      "id": "r-spice",
+      "label": "Spice route",
+      "weight": 1.0,
+      "members": [
+        "dubai",
+        "lagos",
+        "lima",
+        "mexico-city"
+      ]
+    },
+    {
+      "id": "r-pacific-rim",
+      "label": "Pacific Rim",
+      "weight": 1.0,
+      "members": [
+        "amsterdam",
+        "jakarta",
+        "manila",
+        "nairobi"
+      ]
+    },
+    {
+      "id": "r-equator",
+      "label": "Equator hubs",
+      "weight": 0.5,
+      "members": [
+        "cairo",
+        "lagos",
+        "nairobi"
+      ]
+    }
+  ]
+}

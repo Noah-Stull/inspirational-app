@@ -1,13 +1,6 @@
 """Bipartite graph model: vertices, edge-nodes, and a layout algorithm.
 
-Edges are first-class nodes here (the Levi / incidence representation). An
-EdgeNode carries the *set* of vertex ids it connects, so one edge can join two
-vertices or twenty. Nothing is ever drawn between two vertices — every drawn
-connection is an incidence, joining one vertex to one edge-node, which makes
-the rendered structure bipartite by construction.
 
-This module is UI-agnostic on purpose — it knows nothing about Qt, and the
-data layer knows nothing about how the graph is drawn.
 """
 
 from __future__ import annotations
@@ -252,33 +245,7 @@ def _normalize(pos: dict[str, list[float]]) -> dict[str, tuple[float, float]]:
         for vid, p in pos.items()
     }
 
-
-def sample_graph() -> Graph:
-    """Placeholder graph used until queryPOD returns real rows."""
-    vertices = [
-        Vertex("start", "POD Core", group="core"),
-        Vertex("ingest", "Ingest", group="service"),
-        Vertex("transform", "Transform", group="service"),
-        Vertex("warehouse", "Warehouse", group="store"),
-        Vertex("api", "API", group="service"),
-        Vertex("dashboard", "Dashboard", group="client"),
-        Vertex("alerts", "Alerts", group="client"),
-        Vertex("archive", "Archive", group="store"),
-        Vertex("scheduler", "Scheduler", group="service"),
-    ]
-    edges = [
-        EdgeNode("e-intake", frozenset({"start", "ingest", "scheduler"}), "intake"),
-        EdgeNode("e-transform", frozenset({"ingest", "transform"}), "transform"),
-        EdgeNode("e-load", frozenset({"transform", "warehouse"}), "load"),
-        EdgeNode("e-serve", frozenset({"warehouse", "api"}), "serve"),
-        EdgeNode("e-retain", frozenset({"warehouse", "archive"}), "retain"),
-        EdgeNode("e-fanout", frozenset({"api", "dashboard", "alerts"}), "fan-out"),
-        EdgeNode("e-notify", frozenset({"scheduler", "alerts"}), "notify"),
-        EdgeNode(
-            "e-backfill",
-            frozenset({"start", "warehouse", "archive"}),
-            "backfill",
-            weight=0.5,
-        ),
-    ]
-    return Graph(vertices=vertices, edges=edges)
+# There is deliberately no sample graph here. The dataset lives in
+# data/pod_graph.json and is loaded via app.data.pod_schema.graph_from_file.
+# A second hardcoded copy would drift and quietly mislead about which data
+# is actually on screen.

@@ -6,6 +6,8 @@ incidence joining one of each. Nothing connects two circles directly.
 
 from __future__ import annotations
 
+import math
+
 from PyQt6.QtCore import QLineF, QPointF, QRectF, Qt
 from PyQt6.QtGui import QBrush, QColor, QPainter, QPainterPath, QPen
 from PyQt6.QtWidgets import (
@@ -28,6 +30,7 @@ from app.core.config import (
     GROUP_COLORS,
     LABEL_COLOR,
     LAYOUT_SCALE,
+    LAYOUT_SPACING,
     NODE_BORDER,
     NODE_RADIUS,
 )
@@ -199,6 +202,10 @@ class GraphView(QGraphicsView):
         if positions is None:
             positions = spring_layout(graph)
 
+        # The layout is unit-square, so a bigger graph packed into a fixed
+        # scale would overlap. Grow with sqrt(n) to hold spacing constant.
+        scale = max(LAYOUT_SCALE, LAYOUT_SPACING * math.sqrt(max(len(graph), 1)))
+
         self._scene.clear()
         self.nodes = {}
         self.edge_nodes = {}
@@ -206,14 +213,14 @@ class GraphView(QGraphicsView):
         for vertex in graph.vertices:
             item = NodeItem(vertex)
             x, y = positions.get(vertex.id, (0.5, 0.5))
-            item.setPos(x * LAYOUT_SCALE, y * LAYOUT_SCALE)
+            item.setPos(x * scale, y * scale)
             self._scene.addItem(item)
             self.nodes[vertex.id] = item
 
         for edge in graph.valid_edges():
             item = EdgeNodeItem(edge)
             x, y = positions.get(edge.id, (0.5, 0.5))
-            item.setPos(x * LAYOUT_SCALE, y * LAYOUT_SCALE)
+            item.setPos(x * scale, y * scale)
             self._scene.addItem(item)
             self.edge_nodes[edge.id] = item
 
