@@ -1,14 +1,13 @@
 TODO:
-- Link to POD
-    - Make Mock Dataset 
-- Finish and Fix GUI
+- Link to POD - will try when gateway is available.
+    - Make Mock Dataset x
+- Finish and Fix GUI 
     - Make edges interactable
     - Add popup 
 - Serve in web
     - Either run server side and emit file or use D3 to send graph
     - Q - Where will this be accessed?
 - Move or share repo (?)
-- Add readme and clean up repo
 
 
 - Algo may be slow at large node quantities due to O(n^2) changes per iteration
